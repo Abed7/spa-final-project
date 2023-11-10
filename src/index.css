@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* color variables */
+  --main-bg-color: #f9f8f8;
+  --secondary-bg-color: #eff6f1;
+  --dark-bg-color: #525c60;
+  --primary-color: #274c5b;
+  --secondary-color: #7eb693;
+  --highlight-color: #274c5b;
+  --dark-gray: #d4d4d4;
+  /* global font */
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Yellowtail", cursive; */
+}
+
+body {
+}
