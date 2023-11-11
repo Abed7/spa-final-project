@@ -1,0 +1,28 @@
+.Explore {
+  & .search-results {
+    display: grid;
+    padding: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    & .recipe-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: var(--main-bg-color);
+      & .img-wrapper {
+        position: relative;
+        & img {
+          width: 100%;
+        }
+        & .recipe-tag {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background-color: green;
+          padding: 6px 12px;
+          border-radius: 8px;
+          color: white;
+        }
+      }
+    }
+  }
+}
