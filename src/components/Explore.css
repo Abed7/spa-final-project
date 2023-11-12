@@ -1,9 +1,40 @@
 .Explore {
+  & .search-filter-wrapper {
+    display: grid;
+    place-items: center;
+    & .search-wrapper {
+      position: relative;
+      display: grid;
+      place-items: center;
+      & input {
+        background-color: #d4d4d45f;
+        text-align: center;
+        border-radius: 100px;
+        border: none;
+        width: 700px;
+        padding: 1rem 1rem;
+        outline-color: var(--secondary-color);
+      }
+      & button {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        right: 6px;
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+
   & .search-results {
     display: grid;
     padding: 5rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+
     & .recipe-wrapper {
       border-radius: 20px;
       overflow: hidden;
