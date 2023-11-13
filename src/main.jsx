@@ -6,6 +6,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Explore from "./components/Explore.jsx";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
+import Profile from "./components/Profile.jsx";
+import Login from "./components/Login.jsx";
+import RequireAuth from "./components/RequireAuth.jsx";
+import NoMatch from "./components/NoMatch.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -23,6 +28,22 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "Profile",
+        element: (
+          <RequireAuth>
+            <Profile />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "*",
+        element: <NoMatch />,
       },
     ],
   },
