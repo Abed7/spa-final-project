@@ -12,7 +12,10 @@ import RequireAuth from "./components/RequireAuth.jsx";
 import NoMatch from "./components/NoMatch.jsx";
 
 
+
 const router = createBrowserRouter([
+
+  
   {
     path: "/",
     element: <App />,
@@ -38,7 +41,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "login",
+        path:"login",
         element: <Login />,
       },
       {

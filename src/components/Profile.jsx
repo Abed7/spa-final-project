@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from './Auth'
+import './Profile.css'
+
 
 const Profile = () => {
 
