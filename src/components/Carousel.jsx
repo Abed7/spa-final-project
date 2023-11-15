@@ -35,7 +35,8 @@ const Carousel = () => {
   }, [index, images.length]);
 
   return (
-    <div className="container">
+    <section className="Carousel">
+          <div className="container">
       <div className="prev" onClick={handlePrevClick}>
         <div className="arrow-left"></div>
       </div>
@@ -50,6 +51,8 @@ const Carousel = () => {
         <div className="arrow-right"></div>
       </div>
     </div>
+    </section>
+
   );
 };
 

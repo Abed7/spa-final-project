@@ -5,7 +5,7 @@ import "./MonthlyCard.css";
 
 const MonthlyCard = () => {
   return (
-    <>
+    <section className="MonthlyCard">
       <div className="rezept-separator"> </div>
       <div className="monthly-container">
         <div className="monthly-box">
@@ -28,7 +28,7 @@ const MonthlyCard = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

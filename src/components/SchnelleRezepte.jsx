@@ -10,7 +10,7 @@ import "./SchnelleRezepte.css";
 
 const SchnelleRezepte = () => {
   return (
-    <>
+    <section className="SchnelleRezepte">
       <div className="rezept-separator"> </div>
       <div className="rezept-container">
         <h2>SchnelleRezepte</h2>
@@ -62,7 +62,7 @@ const SchnelleRezepte = () => {
         </div>
         <a href="#">Mehr Anzeigen</a>
       </div>
-    </>
+    </section>
   );
 };
 

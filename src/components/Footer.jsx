@@ -6,7 +6,8 @@ import Icon4 from "../assets/Icon4.svg";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <section className="Footer">
+          <div className="footer-container">
       <div className="contact-box footer-box">
         <h3>Contact Us</h3>
         <h4>Email</h4>
@@ -49,6 +50,8 @@ const Footer = () => {
         <p>Oli</p>
       </div>
     </div>
+    </section>
+
   );
 };
 
