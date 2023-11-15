@@ -10,7 +10,7 @@ import Profile from "./components/Profile.jsx";
 import Login from "./components/Login.jsx";
 import RequireAuth from "./components/RequireAuth.jsx";
 import NoMatch from "./components/NoMatch.jsx";
-
+import SaveList from "./components/SaveList.jsx";
 
 
 const router = createBrowserRouter([
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "savelist",
+        element: (<RequireAuth><SaveList /></RequireAuth>),
       },
       {
         path: "Profile",

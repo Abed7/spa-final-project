@@ -1,7 +1,22 @@
-.wrapper{
-    background-color: var(--secondary-color);
-    height: 100vh;
-    text-align: center;
-    color: white;
-    font-size: 5rem;
+.wrapper {
+  background-color: var(--secondary-color);
+  height:80vh;
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  & button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 40%;
+    /* bottom: -5%; */
+  }
+  & button:hover {
+    background-color: var(--dark-gray);
+    color: var(--main-bg-color);
+    transform: scale(1.2);
+    transition: 0.2s;
+  }
 }

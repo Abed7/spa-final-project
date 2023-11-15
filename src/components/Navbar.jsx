@@ -30,13 +30,18 @@ const Navbar = () => {
             <NavLink to="/contactus">Contact Us</NavLink>
           </li>
           <li>
+            <NavLink to="/savelist">Seve</NavLink>
+          </li>
+          <li>
             {/* {" "} */}
             <NavLink to="/profile">Profile</NavLink>
           </li>
 
           <li>{!auth.user && <NavLink to="/login">Login</NavLink>}</li>
+
+          {/* <li>{auth.user || <NavLink to="/profile">{auth.logout}</NavLink>}</li> */}
         </ul>
-        <div>{auth.user}</div>
+        {/* <div>{auth.user}</div> */}
       </nav>
     </header>
   );
