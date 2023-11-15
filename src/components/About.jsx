@@ -28,7 +28,17 @@ const About = () => {
           return detailData;
         });
 
+
+    fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=30&apiKey=${apiKeyN}
+      `
+    ).then((response) => response.json())
+      .then((json) => {
+        // console.log(json.results[0].image);
+        console.log(json);
+   
         const resolvedRecipeDetails = await Promise.all(recipeDetailsPromises);
+
 
         setData(resolvedRecipeDetails);
       } catch (error) {
