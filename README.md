@@ -1,8 +1,13 @@
-# React + Vite
+# ToDo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Oli ToDo
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Subscribe Box Resonsive machen ✓
+- schnelle Rezepte Button "Mehr anzeigen)
+  Fetch mit Random Rezepten die unter 30min dauern
+- Rezept des Monats
+  Auf ein Keks/Plätzchen Rezept aus der API verweisen
+- Spruch des Tages mit API verbinden
+- SubscripeBox irgendwie mit Funktion ausstatten?
+  (vll nach eintippen von Mail adresse Pop Up mit Vielen Dank, Du wirst von uns zugespamt)
+- Footer Styling

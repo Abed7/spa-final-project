@@ -26,7 +26,7 @@ const SchnelleRezepte = () => {
               <h3>Spaghetti aglio e olio</h3>
 
               <p>Bild ist Link - könnte auf API rezept verweisen</p>
-              <p>
+              <p className="rezept-time">
                 <img className="clock" src={clockIcon} alt="clock Icon" /> 25min
               </p>
             </div>
@@ -40,7 +40,7 @@ const SchnelleRezepte = () => {
             <div className="rezept-botom">
               <h3>Tomatensuppe</h3>
               <p>Random Information aus Api</p>
-              <p>
+              <p className="rezept-time">
                 <img className="clock" src={clockIcon} alt="clock Icon" /> 20min
               </p>
             </div>
@@ -54,13 +54,13 @@ const SchnelleRezepte = () => {
             <div className="rezept-botom">
               <h3>Frischer Gartensalat</h3>
               <p>Random Information aus Api</p>
-              <p>
+              <p className="rezept-time">
                 <img className="clock" src={clockIcon} alt="clock Icon" /> 16min
               </p>
             </div>
           </div>
         </div>
-        <a href="#">Mehr Anzeigen</a>
+        <button className="button">Mehr Anzeigen</button>
       </div>
     </section>
   );

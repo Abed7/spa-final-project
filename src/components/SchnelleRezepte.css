@@ -10,31 +10,7 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    margin: 0 8rem 3rem 8rem;
-  }
-
-  & .rezept-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  & .rezept-card {
-    border: 1px solid rgb(180, 166, 166);
-    border-radius: 8px;
-    max-width: 300px;
-  }
-
-  & .rezept-img {
-    height: 230px;
-    width: 300px;
-  }
-
-  & .rezept-botom {
-    padding: 1rem;
+    margin: 0 5rem 3rem 5rem;
   }
 
   & h2 {
@@ -42,13 +18,52 @@
     margin: 1rem;
   }
 
+  & .rezept-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%; 
+  }
+
+  & .rezept-card {
+    border: 1px solid rgb(180, 166, 166);
+    border-radius: 10px;
+    width: 340px;
+  }
+
+  & .rezept-img img {
+    height: 230px;
+    width: 100%; 
+    border-radius: 10px;
+  }
+
+  & .rezept-botom {
+    padding: 1rem;
+    height: 9rem;
+    display: flex;
+  flex-direction: column;
+  }
+
+  & .rezept-botom p:first-of-type {
+    margin-top: .5rem;
+  }
+
+  
+
   & .rezept-card a {
     margin-left: auto;
   }
 
-  & p {
+  & .rezept-botom p {
     display: flex;
     align-items: center;
+  }
+
+  & .rezept-time {
+    margin-top: auto; 
   }
 
   & .clock {
@@ -56,4 +71,58 @@
     width: 1rem;
     margin-right: 5px;
   }
+
+  /* Button */
+  & .rezept-container button{
+    margin-top: 2rem ;
+    background: linear-gradient(to bottom right, #7eb693,  rgba(0, 128, 172, 1));
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+
+  & .rezept-container button:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #7eb693, .125rem .125rem 1rem #7eb69386;
+  }
+  
+  & .rezept-container button:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #7eb693, .125rem .125rem 1rem #7eb69386;;
+  }
+
+
+
+  /* Responsive */
+ 
+  @media (max-width: 870px) {
+    & .rezept-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 2rem 3rem 2rem;
+    }
+
+    & .rezept-card {
+      border: 1px solid rgb(180, 166, 166);
+      border-radius: 10px;
+      width: 450px;
+    }
+   
+  }
+
+  
 }
