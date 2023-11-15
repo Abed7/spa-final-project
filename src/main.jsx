@@ -12,15 +12,10 @@ import Login from "./components/Login.jsx";
 import RequireAuth from "./components/RequireAuth.jsx";
 import NoMatch from "./components/NoMatch.jsx";
 
-
-
 import News from "./components/News.jsx";
 import Recipe from "./components/Recipe.jsx";
 
-
 const router = createBrowserRouter([
-
-  
   {
     path: "/",
     element: <App />,
@@ -38,7 +33,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-
         path: "Profile",
         element: (
           <RequireAuth>
@@ -47,20 +41,20 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:"login",
+        path: "login",
         element: <Login />,
       },
       {
         path: "*",
         element: <NoMatch />,
-
+      },
+      // {
+      //   path: ":id",
+      //   element: <Recipe />,
+      // },
+      {
         path: "news",
         element: <News />,
-      },
-      {
-        path: ":id",
-        element: <Recipe />,
-
       },
     ],
   },

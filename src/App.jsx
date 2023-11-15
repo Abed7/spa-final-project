@@ -8,21 +8,19 @@ import { AuthProvider } from "./components/Auth";
 
 import Footer from "./components/Footer.jsx";
 
-
 function App() {
   return (
     <>
-
       <AuthProvider>
         <Navbar />
+        <Carousel />
         <Outlet />
+        <Footer />
       </AuthProvider>
 
-      <Navbar />
-      <Carousel />
-      <Outlet />
-      <Footer />
+      {/* <Navbar /> */}
 
+      {/* <Outlet /> */}
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useAuth } from "./Auth";
 
 const Navbar = () => {
   const auth = useAuth();
+  console.log(auth);
   return (
     <header className="Navbar">
       <nav>
