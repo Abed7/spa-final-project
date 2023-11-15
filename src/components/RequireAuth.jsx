@@ -11,7 +11,7 @@ const RequireAuth = ({ children }) => {
   // }
   //   return children;
 
-  console.log(children);
+  // console.log(children);
   return(
     auth?.user
         ? children

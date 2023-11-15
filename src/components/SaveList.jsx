@@ -14,7 +14,7 @@ const SaveList = () => {
   useEffect(() => {
     
     console.log('Watched items updated:', saveItems);
-    // You can perform additional actions here, such as updating the UI
+    // additional actions here, such as updating the UI
   }, [saveItems]);
 
   const addToSaveList = newItem => {
