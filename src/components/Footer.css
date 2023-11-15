@@ -24,17 +24,45 @@
     width: 60px;
     margin-left: 1rem;
   }
+  & .utility-box a {
+    
+    margin-bottom: 0.8rem;
+  }
 
-  & h3 {
-    font-size: 1.5rem;
+  & .footer-box h3 {
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
 
-  & h4 {
+  & .footer-box h4 {
     margin: 0.7rem;
   }
 
-  & p {
-    margin-bottom: 1rem;
+  & .organick-box p {
+    margin-bottom: 3rem;
+  }
+  
+
+  
+  @media (max-width: 870px) {
+    & .footer-container {
+      flex-direction: column; /* Änderung auf column für untereinander */
+    }
+    & .footer-box {
+      margin-bottom: 1.5rem;
+    }
+    & .organick-box {
+      order: 1; /* Ändert die Reihenfolge auf 1 */
+      text-align: center;
+    }
+
+    & .contact-box {
+      order: 2; /* Ändert die Reihenfolge auf 2 */
+    }
+
+    & .utility-box {
+      order: 3; /* Ändert die Reihenfolge auf 3 */
+    }
+   
   }
 }

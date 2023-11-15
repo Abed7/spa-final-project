@@ -3,6 +3,7 @@ import "./SubscribeBox.css";
 const SubscribeBox = () => {
   return (
     <section className="SubscribeBox">
+      <div className="rezept-separator"> </div>
       <div className="subscribeBox">
         <div className="subscribeImg">
           <div className="subscribeContent">
