@@ -2,7 +2,7 @@ import Cookie from "../assets/Cookie.jpg";
 // import KeksIcon from "../assets/cookie-icon.svg";
 
 import "./MonthlyCard.css";
-
+import { Link } from "react-router-dom";
 const MonthlyCard = () => {
   return (
     <section className="MonthlyCard">
@@ -23,7 +23,7 @@ const MonthlyCard = () => {
                 Lieblings-Plätzchen: Nussmakronen! Sie sind super einfach und
                 schnell gebacken.
               </p>
-              <button>Zum Rezept</button>
+              <Link to={`/recipe/${`639798`}`}>Hier Klicken</Link>
             </div>
           </div>
         </div>
