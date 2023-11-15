@@ -1,0 +1,7 @@
+.wrapper{
+    background-color: var(--secondary-color);
+    height: 100vh;
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+}

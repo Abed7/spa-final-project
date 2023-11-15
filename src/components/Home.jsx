@@ -5,11 +5,12 @@ import SubscribeBox from "./SubscribeBox.jsx";
 
 const Home = () => {
   return (
+
     <main className="Home">
       <MonthlyCard />
       <SchnelleRezepte />
       <SubscribeBox />
-    </main>
+
   );
 };
 
