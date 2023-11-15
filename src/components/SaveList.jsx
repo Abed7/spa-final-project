@@ -4,29 +4,41 @@ import { useEffect, useState } from "react";
 import "./SaveList.css";
 
 const SaveList = () => {
-    const [saveItems, setSeveItems] = useState(['Item 1', 'Item 2', 'Item 3']);
+  const [saveItems, setSeveItems] = useState(["Item 1", "Item 2", "Item 3"]);
 
   const auth = useAuth();
   const navigate = useNavigate();
-  
-
 
   useEffect(() => {
-    
-    console.log('Watched items updated:', saveItems);
+    console.log("Watched items updated:", saveItems);
     // additional actions here, such as updating the UI
   }, [saveItems]);
 
-  const addToSaveList = newItem => {
-    setSeveItems(prevItems => [...prevItems, newItem]);
+  const addToSaveList = (newItem) => {
+    setSeveItems((prevItems) => {
+      const newSaveItems = [...prevItems, newItem];
+      localStorage.setItem("saveItems", JSON.stringify(newSaveItems));
+      return newSaveItems;
+    });
   };
+  
+
+  const handleDeleteItem = (index) => {
+    const newSaveItems = [...saveItems];
+    newSaveItems.splice(index, 1);
+    setSeveItems(newSaveItems);
+    localStorage.setItem("saveItems", JSON.stringify(newSaveItems));
+  };
+
+  useEffect(() => {
+    const storedItem = JSON.parse(localStorage.getItem("saveItems"));
+    if (storedItem) setSeveItems(storedItem);
+  }, []);
 
   const handleLogout = () => {
     auth.logout();
     navigate("/");
   };
-
-
 
   return (
     <section className="wrapper">
@@ -34,11 +46,15 @@ const SaveList = () => {
       <h5>Welcome {auth.user}</h5>
       <button onClick={handleLogout}>Logout</button>
       <ul>
-        {saveItems.map(item => (
-          <li key={item}>{item}</li>
+        {saveItems.map((item, index) => (
+          <><li key={item}>{item}</li>
+          <span onClick={() => handleDeleteItem(index)} className="trash">
+        ❌
+      </span></>
         ))}
       </ul>
-      <button onClick={() => addToSaveList('New Item')}>Add to List</button>
+      
+      <button onClick={() => addToSaveList("New Item")}>Add to List</button>
     </section>
   );
 };
