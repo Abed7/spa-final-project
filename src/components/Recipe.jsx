@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Recipe.css";
+import { useParams } from "react-router-dom";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState({});
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const { id } = useParams();
+  console.log("ID", id);
 
   useEffect(() => {
     const apiKeyO2 = "08177436caba4cdd8794441ed4da0ef1";
