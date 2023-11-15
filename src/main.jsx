@@ -48,10 +48,16 @@ const router = createBrowserRouter([
         path: "*",
         element: <NoMatch />,
       },
-      // {
-      //   path: ":id",
-      //   element: <Recipe />,
-      // },
+      {
+        path: "recipe",
+        element: <Recipe />,
+        children: [
+          {
+            path: ":id",
+            element: <Recipe />,
+          },
+        ],
+      },
       {
         path: "news",
         element: <News />,

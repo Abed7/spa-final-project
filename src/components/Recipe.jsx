@@ -6,7 +6,6 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState({});
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const { id } = useParams();
-  console.log("ID", id);
 
   useEffect(() => {
     const apiKeyO2 = "08177436caba4cdd8794441ed4da0ef1";
@@ -15,7 +14,7 @@ const Recipe = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=${apiKeyM2}`
+          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKeyM2}`
         );
         const data = await response.json();
         // console.log(data);

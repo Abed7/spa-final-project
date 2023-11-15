@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import "./Explore.css";
 import { FaSistrix } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const Explore = () => {
-  const [data, setData] = useState([]);
+  const { data, setData } = useOutletContext();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [search, setSearch] = useState("");
   const [nutrition, setNutrition] = useState("meat");
@@ -144,7 +145,7 @@ const Explore = () => {
           ? data.map((recipe) => {
               return (
                 <Link
-                  to={`/recipe/`}
+                  to={`/recipe/${recipe.id}`}
                   key={recipe.id}
                   className="recipe-wrapper"
                 >
