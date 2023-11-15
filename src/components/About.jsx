@@ -15,7 +15,7 @@ const About = () => {
       `
     )
       // fetch(
-      //   `https://api.spoonacular.com/recipes/${654857}/information?apiKey=${apiKeyN}
+      //   `https://api.spoonacular.com/recipes/${654857}/information?apiKey=c7250b0a541c49f0ad7cde17c064bb04
       //     `
       // )
       .then((response) => response.json())

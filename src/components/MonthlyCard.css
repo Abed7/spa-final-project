@@ -1,0 +1,43 @@
+.rezept-separator {
+  border-top: 1px solid #ccc;
+  margin: 20px 10rem;
+}
+
+.monthly-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.monthly-box {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 1px solid #ccc; /* Stil der Box anpassen */
+}
+
+.monthly-header {
+  text-align: center;
+  padding: 10px;
+  background-color: #eee; /* Hintergrundfarbe anpassen */
+}
+
+.monthly-body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+
+.monthly-body img {
+  width: 33%;
+}
+
+.monthly-body p {
+  flex: 2; /* 2/3 der Breite einnehmen */
+  margin-right: 10px; /* Abstand zwischen Text und Bild anpassen */
+}
+
+.monthly-body button {
+  flex: 1; /* 1/3 der Breite einnehmen */
+}
