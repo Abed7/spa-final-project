@@ -18,7 +18,8 @@ const Explore = () => {
   const apiKeyM2 = "96a4012a907a426391db8efdb8849261";
 
   let query = "";
-  let searchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyN}${query}${cusine}`;
+  // let searchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyN}${query}${cusine}`;
+  let searchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyM2}`;
 
   console.log(searchUrl);
 
@@ -48,7 +49,7 @@ const Explore = () => {
     const fetchData = async () => {
       try {
         const response =
-          await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyN}
+          await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyM2}
         `);
         const loadedData = await response.json();
         console.log(loadedData.recipe);
@@ -64,7 +65,7 @@ const Explore = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyN}&cuisine=mexican`
+          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyM2}&cuisine=mexican`
         );
 
         const data = await response.json();
