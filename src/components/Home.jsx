@@ -1,10 +1,15 @@
 import "./Home.css";
+import SchnelleRezepte from "./SchnelleRezepte.jsx";
+import MonthlyCard from "./MonthlyCard.jsx";
+import SubscribeBox from "./SubscribeBox.jsx";
 
 const Home = () => {
   return (
-    <>
-      <section className="Home"></section>
-    </>
+    <main className="Home">
+      <MonthlyCard />
+      <SchnelleRezepte />
+      <SubscribeBox />
+    </main>
   );
 };
 
