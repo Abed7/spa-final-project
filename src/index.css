@@ -14,11 +14,9 @@
   --dark-bg-color: #525c60;
   --primary-color: #274c5b;
   --secondary-color: #7eb693;
-  --highlight-color: #274c5b;
+  --highlight-color: #efd372;
   --dark-gray: #d4d4d4;
   /* global font */
   font-family: "Roboto", sans-serif;
   /* font-family: "Yellowtail", cursive; */
 }
-
-
