@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Explore from "./components/Explore.jsx";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
+
 import Profile from "./components/Profile.jsx";
 import Login from "./components/Login.jsx";
 import RequireAuth from "./components/RequireAuth.jsx";
@@ -13,9 +14,10 @@ import NoMatch from "./components/NoMatch.jsx";
 import SaveList from "./components/SaveList.jsx";
 
 
-const router = createBrowserRouter([
+import News from "./components/News.jsx";
+import Recipe from "./components/Recipe.jsx";
 
-  
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -45,12 +47,26 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:"login",
+        path: "login",
         element: <Login />,
       },
       {
         path: "*",
         element: <NoMatch />,
+      },
+      {
+        path: "recipe",
+        element: <Recipe />,
+        children: [
+          {
+            path: ":id",
+            element: <Recipe />,
+          },
+        ],
+      },
+      {
+        path: "news",
+        element: <News />,
       },
     ],
   },

@@ -1,0 +1,40 @@
+/* Frage: wo hatten wir den Schrift Style? Muss ich da noch Roboto importieren oder war dass schon? */
+/* CSS Muss ich noch in die andere schreibweise umschreiben */
+.Footer {
+  & .footer-container {
+    display: flex;
+    padding: 5%;
+  }
+
+  & .footer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin: 0;
+  }
+
+  & .icon-box {
+    display: flex;
+    gap: 10px;
+  }
+
+  & .icon img {
+    height: 60px;
+    width: 60px;
+    margin-left: 1rem;
+  }
+
+  & h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  & h4 {
+    margin: 0.7rem;
+  }
+
+  & p {
+    margin-bottom: 1rem;
+  }
+}

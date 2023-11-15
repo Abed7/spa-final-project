@@ -1,0 +1,59 @@
+.SchnelleRezepte {
+  & .rezept-separator {
+    border-top: 1px solid #ccc;
+    margin: 20px 10rem;
+  }
+
+  & .rezept-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8rem 3rem 8rem;
+  }
+
+  & .rezept-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  & .rezept-card {
+    border: 1px solid rgb(180, 166, 166);
+    border-radius: 8px;
+    max-width: 300px;
+  }
+
+  & .rezept-img {
+    height: 230px;
+    width: 300px;
+  }
+
+  & .rezept-botom {
+    padding: 1rem;
+  }
+
+  & h2 {
+    align-self: center;
+    margin: 1rem;
+  }
+
+  & .rezept-card a {
+    margin-left: auto;
+  }
+
+  & p {
+    display: flex;
+    align-items: center;
+  }
+
+  & .clock {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 5px;
+  }
+}
