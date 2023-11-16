@@ -25,10 +25,12 @@ const Login = () => {
     console.log(e.target.login.value);
     setUser(e.target.login.value)
     if(user)
-    {navigate("/profile", {replace: true});} 
+    {navigate(redirectPath, {replace: true});} 
   };
   
-  
+const handleRoute = () => {
+  navigate(redirectPath, {replace: true});
+}
 
   return (
     <div className="container">
@@ -46,7 +48,8 @@ const Login = () => {
           <button type="submit">Login</button>
       </form>
       ):(
-        <p>Du bist schon eingeloggt!</p>
+        <p>Loged in... {handleRoute()}</p>
+        
       )}
     </div>
   );

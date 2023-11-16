@@ -15,8 +15,11 @@ const Recipe = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
+
           `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKeyO3}`
-        );
+
+
+       );
         const data = await response.json();
         // console.log(data);
         setRecipe(data);

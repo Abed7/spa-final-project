@@ -18,7 +18,9 @@ const SchnelleRezepte = () => {
 
         <div className="rezept-box">
           <div className="rezept-card">
+
             <Link to={`/recipe/${`661094`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptPasta} alt="Bild Pasta" />
               </div>
@@ -33,7 +35,9 @@ const SchnelleRezepte = () => {
             </div>
           </div>
           <div className="rezept-card">
+
             <Link to={`/recipe/${`1674265`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptSuppe} alt="Bild Suppe" />
               </div>
@@ -47,7 +51,9 @@ const SchnelleRezepte = () => {
             </div>
           </div>
           <div className="rezept-card">
+
             <Link to={`/recipe/${`660108`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptSalat} alt="Bild Salat" />
               </div>

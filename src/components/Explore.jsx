@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import "./Explore.css";
 import { FaSistrix } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import SearchResults from "./SearchResults";
 
 const Explore = () => {
-  const [data, setData] = useState([]);
+  const { data, setData } = useOutletContext();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [noResults, setNoResults] = useState(false);
   const [search, setSearch] = useState("");
   const [nutrition, setNutrition] = useState("meat");
-  console.log("useState data:", data);
+  const [cusine, setCusine] = useState("");
 
   // API Keys
 
@@ -17,6 +20,8 @@ const Explore = () => {
   const apiKeyN = "fcdf6ca97b5c4a468a70e2bbb8bd0bbf";
   const apiKeyO2 = "08177436caba4cdd8794441ed4da0ef1";
   const apiKeyM2 = "96a4012a907a426391db8efdb8849261";
+  const apiKeyT2 = "a7ca6efa240348bab5906a62a85f6030";
+  const apiKeyT3 = "aefba775211b4fa4971e90a23cc58876";
 
   // handler functions
   const searchHandler = (e) => {
@@ -27,20 +32,39 @@ const Explore = () => {
     setNutrition(e.target.value);
   };
 
+  const cusineHandler = (e) => {
+    setCusine(e.target.value);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
   };
 
   const loadHandler = () => {
+    let fetchUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyT3}`;
+
+    if (search.trim() !== "" || cusine !== "") {
+      fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyT3}`;
+
+      if (search.trim() !== "") {
+        fetchUrl += `&query=${search}`;
+      }
+      if (cusine !== "") {
+        fetchUrl += `&cuisine=${cusine}`;
+      }
+    }
+
     const fetchData = async () => {
       try {
-        const response =
-          await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO2}
-        `);
+        const response = await fetch(fetchUrl);
         const loadedData = await response.json();
         console.log(loadedData.recipe);
-        setData([...data, ...loadedData.recipes]);
+        if (loadedData.recipes === undefined) {
+          setData([...data, ...loadedData.results]);
+        } else {
+          setData([...data, ...loadedData.recipes]);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -52,10 +76,11 @@ const Explore = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO2}`
+          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyT3}&cuisine=mexican`
         );
 
         const data = await response.json();
+        console.log("RANDOM REZEPTE WERDEN GELADEN");
         setData(data.recipes);
         setIsDataLoaded(true);
       } catch (error) {
@@ -66,46 +91,65 @@ const Explore = () => {
   }, []);
 
   useEffect(() => {
-    if (search.length > 2) {
-      const fetchData = async () => {
-        try {
-          const response =
-            await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=10&apiKey=${apiKeyO2}&addRecipeInformation=true
-          `);
-          const data = await response.json();
-          // console.log("Data:", data);
-          // console.log(response);
-          // // save recipe ids in an extra array via map
-          // const recipeIds = data.results.map((result) => result.id);
+    // if (search.length >= 0) {
+    let fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyT3}`;
 
-          // const recipeDetailsPromises = recipeIds.map(async (id) => {
-          //   const detailResponse = await fetch(
-          //     `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKeyO}`
-          //   );
-
-          //   const detailData = await detailResponse.json();
-          //   console.log(detailData);
-          //   return detailData;
-          // });
-
-          // const resolvedRecipeDetails = await Promise.all(
-          //   recipeDetailsPromises
-          // );
-
-          setData(data.results);
-          setIsDataLoaded(true);
-        } catch (error) {
-          console.log("Fatching Data Error:", error);
-        }
-      };
-
-      fetchData();
+    if (search.trim() !== "") {
+      fetchUrl += `&query=${search}`;
     }
-  }, [search]);
+    if (cusine !== "") {
+      fetchUrl += `&cuisine=${cusine}`;
+    }
+
+    console.log(fetchUrl);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(fetchUrl);
+        const data = await response.json();
+        // console.log("Data:", data);
+        // console.log(response);
+        // // save recipe ids in an extra array via map
+        // const recipeIds = data.results.map((result) => result.id);
+
+        // const recipeDetailsPromises = recipeIds.map(async (id) => {
+        //   const detailResponse = await fetch(
+        //     `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKeyO}`
+        //   );
+
+        //   const detailData = await detailResponse.json();
+        //   console.log(detailData);
+        //   return detailData;
+        // });
+
+        // const resolvedRecipeDetails = await Promise.all(
+        //   recipeDetailsPromises
+        // );
+        console.log(data);
+
+        if (data.results.length === 0) {
+          console.log("KEINE SUCHERGEBNISSE");
+          setNoResults(true);
+          setIsDataLoaded(false);
+        } else {
+          console.log("VORHANDEN");
+          setNoResults(false);
+          setIsDataLoaded(true);
+        }
+
+        setData(data.results);
+
+        console.log("I FETCHED NEW DATA");
+      } catch (error) {
+        console.log("Fatching Data Error:", error);
+      }
+    };
+
+    fetchData();
+    // }
+  }, [search, cusine]);
 
   return (
     <main className="Explore">
-      <section className="stage-explpore"></section>
       <section className="search-filter-wrapper">
         <form onSubmit={submitHandler} className="search-wrapper">
           <input type="text" onChange={searchHandler} value={search}></input>
@@ -113,55 +157,28 @@ const Explore = () => {
             <FaSistrix />
           </button>
           <div className="filter-wrapper">
-            <select
-              name="nutrition"
-              id="nutrition"
-              value={nutrition}
-              onChange={nutritionHandler}
-            >
-              <option value="meat">Meat</option>
-              <option value="fish">Fish</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
-            </select>
-            <select name="" id="">
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-            </select>
-            <select name="" id="">
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-              <option value="">Test1</option>
-            </select>
+            <div className="select-cusine">
+              <select
+                name="cusine"
+                id="cusine"
+                onChange={cusineHandler}
+                value={cusine}
+              >
+                <option value="">Cuisines</option>
+                <option value="asian">Asian</option>
+                <option value="german">German</option>
+                <option value="greek">Greek</option>
+                <option value="spanish">Spanish</option>
+              </select>
+            </div>
           </div>
         </form>
       </section>
-      <section className="search-results">
-        {isDataLoaded
-          ? data.map((recipe) => {
-              return (
-                <Link
-                  to={`/recipe/`}
-                  key={recipe.id}
-                  className="recipe-wrapper"
-                >
-                  <div className="img-wrapper">
-                    <img src={recipe.image} alt={recipe.title} />
-                    {recipe.vegetarian ? (
-                      <div className="recipe-tag">
-                        {recipe.vegan ? "vegan" : "vegetarian"}
-                      </div>
-                    ) : null}
-                  </div>
-                  <h3>{recipe.title}</h3>
-                </Link>
-              );
-            })
-          : "Daten sind am laden"}
-      </section>
+      <SearchResults
+        data={data}
+        isDataLoaded={isDataLoaded}
+        noResults={noResults}
+      />
       <section className="load-wrapper">
         <button onClick={loadHandler}>Load more</button>
       </section>

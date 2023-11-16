@@ -13,6 +13,7 @@ import RequireAuth from "./components/RequireAuth.jsx";
 import NoMatch from "./components/NoMatch.jsx";
 import SaveList from "./components/SaveList.jsx";
 
+
 import News from "./components/News.jsx";
 import Recipe from "./components/Recipe.jsx";
 
@@ -35,11 +36,15 @@ const router = createBrowserRouter([
       },
       {
         path: "savelist",
+
         element: (
           <RequireAuth>
             <SaveList />
           </RequireAuth>
         ),
+
+        element: (<RequireAuth><SaveList /></RequireAuth>),
+
       },
       {
         path: "Profile",
