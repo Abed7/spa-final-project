@@ -12,6 +12,7 @@ const Explore = () => {
   const [search, setSearch] = useState("");
   const [nutrition, setNutrition] = useState("meat");
   const [cusine, setCusine] = useState("");
+  const [type, setType] = useState("");
 
   // API Keys
 
@@ -28,12 +29,12 @@ const Explore = () => {
     setSearch(e.target.value);
   };
 
-  const nutritionHandler = (e) => {
-    setNutrition(e.target.value);
-  };
-
   const cusineHandler = (e) => {
     setCusine(e.target.value);
+  };
+
+  const typeHandler = (e) => {
+    setType(e.target.value);
   };
 
   const submitHandler = (e) => {
@@ -42,16 +43,19 @@ const Explore = () => {
   };
 
   const loadHandler = () => {
-    let fetchUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyT3}`;
+    let fetchUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO}`;
 
     if (search.trim() !== "" || cusine !== "") {
-      fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyT3}`;
+      fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyO}`;
 
       if (search.trim() !== "") {
         fetchUrl += `&query=${search}`;
       }
       if (cusine !== "") {
         fetchUrl += `&cuisine=${cusine}`;
+      }
+      if (type !== "") {
+        fetchUrl += `&type=${type}`;
       }
     }
 
@@ -76,7 +80,7 @@ const Explore = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyT3}&cuisine=mexican`
+          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO}&cuisine=mexican`
         );
 
         const data = await response.json();
@@ -92,13 +96,16 @@ const Explore = () => {
 
   useEffect(() => {
     // if (search.length >= 0) {
-    let fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyT3}`;
+    let fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyO}`;
 
     if (search.trim() !== "") {
       fetchUrl += `&query=${search}`;
     }
     if (cusine !== "") {
       fetchUrl += `&cuisine=${cusine}`;
+    }
+    if (type !== "") {
+      fetchUrl += `&type=${type}`;
     }
 
     console.log(fetchUrl);
@@ -146,7 +153,7 @@ const Explore = () => {
 
     fetchData();
     // }
-  }, [search, cusine]);
+  }, [search, cusine, type]);
 
   return (
     <main className="Explore">
@@ -169,6 +176,13 @@ const Explore = () => {
                 <option value="german">German</option>
                 <option value="greek">Greek</option>
                 <option value="spanish">Spanish</option>
+              </select>
+              <select name="type" id="type" onChange={typeHandler} value={type}>
+                <option value="">Type</option>
+                <option value="soup">Soup</option>
+                <option value="salad">Salad</option>
+                <option value="drink">Drink</option>
+                <option value="bread">Bread</option>
               </select>
             </div>
           </div>

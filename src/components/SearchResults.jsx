@@ -1,14 +1,21 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import "./SearchResults.css";
+import noresults from "../assets/no_results.gif";
 
 const RecipeCard = ({ data, isDataLoaded, noResults }) => {
   let uxRender;
   console.log("noResults", noResults);
   if (noResults) {
-    uxRender = "Keine Ergebnisse zu deiner Suche gefunden";
-  } else uxRender = "Daten sind am Laden";
-
+    uxRender = (
+      <div className="noresults">
+        <h2>No results with your search settings</h2>
+        <img src={noresults} alt="" />
+      </div>
+    );
+  } else {
+    uxRender = "Data is loading";
+  }
   return (
     <section className="SearchResults">
       {isDataLoaded
