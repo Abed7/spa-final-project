@@ -21,7 +21,6 @@ const SaveList = () => {
       return newSaveItems;
     });
   };
-  
 
   const handleDeleteItem = (index) => {
     const newSaveItems = [...saveItems];
@@ -41,20 +40,22 @@ const SaveList = () => {
   };
 
   return (
-    <section className="wrapper">
+    <section className="wrapper-save">
       <div>SaveList</div>
       <h5>Welcome {auth.user}</h5>
       <button onClick={handleLogout}>Logout</button>
       <ul>
         {saveItems.map((item, index) => (
-          <><li key={item}>{item}</li>
-          <span onClick={() => handleDeleteItem(index)} className="trash">
-        ❌
-      </span></>
+          <section className="like-items">
+            <li key={item}>{item}</li>
+            <span onClick={() => handleDeleteItem(index)} className="trash">
+              ❌
+            </span>
+          </section >
         ))}
       </ul>
-      
-      <button onClick={() => addToSaveList("New Item")}>Add to List</button>
+
+      <button className="like" onClick={() => addToSaveList("New Item")}>💓</button>
     </section>
   );
 };
