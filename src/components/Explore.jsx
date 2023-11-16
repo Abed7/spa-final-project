@@ -43,10 +43,10 @@ const Explore = () => {
   };
 
   const loadHandler = () => {
-    let fetchUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO}`;
+    let fetchUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyM2}`;
 
     if (search.trim() !== "" || cusine !== "") {
-      fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyO}`;
+      fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyM2}`;
 
       if (search.trim() !== "") {
         fetchUrl += `&query=${search}`;
@@ -80,7 +80,7 @@ const Explore = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyO}&cuisine=mexican`
+          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKeyM2}&cuisine=mexican`
         );
 
         const data = await response.json();
@@ -96,7 +96,7 @@ const Explore = () => {
 
   useEffect(() => {
     // if (search.length >= 0) {
-    let fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyO}`;
+    let fetchUrl = `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=10&apiKey=${apiKeyM2}`;
 
     if (search.trim() !== "") {
       fetchUrl += `&query=${search}`;

@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "./Auth";
+import { FaHeartCirclePlus } from "react-icons/fa6";
 
 const Navbar = () => {
   const auth = useAuth();
@@ -21,31 +22,29 @@ const Navbar = () => {
           <li>
             <NavLink to="/explore">Explore</NavLink>
           </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/news">News</NavLink>
-          </li>
-          <li>
-            <NavLink to="/recipe">Recipe</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contactus">Contact Us</NavLink>
-          </li>
-          <li>
-            {auth.user && (<NavLink to="/savelist">Seve</NavLink>)}
-          </li>
-          <li>
-            {/* {" "} */}
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
-
-          <li>{!auth.user && (<NavLink to="/login">Login</NavLink>)}</li>
 
           {/* <li>{auth.user || <NavLink to="/profile">{auth.logout}</NavLink>}</li> */}
         </ul>
-        {/* <div>{auth.user}</div> */}
+        <ul>
+          <li>
+            {auth.user && (
+              <NavLink to="/savelist">
+                <FaHeartCirclePlus id="heart" />
+              </NavLink>
+            )}
+          </li>
+          {/* <li>
+            {" "}
+            <NavLink to="/profile">Profile</NavLink>
+          </li> */}
+
+          <li>{!auth.user && <NavLink to="/login">Login</NavLink>}</li>
+          {auth.user && (
+            <li>
+              <NavLink to="/profile">{auth.user}</NavLink>
+            </li>
+          )}
+        </ul>
       </nav>
     </header>
   );

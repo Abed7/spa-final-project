@@ -19,22 +19,23 @@
       & img {
         width: 36px;
       }
-      
-    
-      }
     }
-    & ul {
-      display: flex;
-      list-style-type: none;
-      gap: 2rem;
+  }
+  & ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    align-items: center;
 
-      & a {
-        text-decoration: none;
-        color: var(--primary-color);
-        &:hover {
-          color: var(--secondary-color);
-        }
+    & a {
+      text-decoration: none;
+      color: var(--primary-color);
+      &:hover {
+        color: var(--secondary-color);
+      }
+      & #heart {
+        font-size: 1.8rem;
       }
     }
   }
-
+}

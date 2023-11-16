@@ -10,12 +10,13 @@ import Footer from "./components/Footer.jsx";
 
 function App() {
   const [data, setData] = useState([]);
+  const [saveRecipe, setSaveRecipe] = useState([]);
   return (
     <>
       <AuthProvider>
         <Navbar />
         <Carousel />
-        <Outlet context={{ data, setData }} />
+        <Outlet context={{ data, setData, saveRecipe, setSaveRecipe }} />
         <Footer />
       </AuthProvider>
 

@@ -64,6 +64,8 @@
         height: 80px;
         display: grid;
         place-items: center;
+        position: relative;
+
         & h3 {
           font-size: 1rem;
           padding: 1rem 0.5rem;
@@ -91,5 +93,17 @@
   & .noresults {
     display: grid;
     place-items: center;
+  }
+  & button {
+    & #heart {
+      position: absolute;
+      right: 50px;
+      bottom: -45px;
+      font-size: 2rem;
+      color: var(--primary-color);
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
   }
 }
