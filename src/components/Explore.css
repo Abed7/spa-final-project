@@ -32,10 +32,20 @@
     }
   }
   & .filter-wrapper {
-    border: 1px solid red;
     width: 100%;
     display: flex;
-    justify-content: space-between;#
+    justify-content: space-between;
+    & .select-cusine {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      & select {
+        padding: 0.5rem;
+        background-color: var(--highlight-color);
+        border: none;
+        border-radius: 10px;
+      }
+    }
   }
   & .load-wrapper {
     display: grid;

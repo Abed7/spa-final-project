@@ -2,7 +2,13 @@
 import { Link } from "react-router-dom";
 import "./SearchResults.css";
 
-const RecipeCard = ({ data, isDataLoaded }) => {
+const RecipeCard = ({ data, isDataLoaded, noResults }) => {
+  let uxRender;
+  console.log("noResults", noResults);
+  if (noResults) {
+    uxRender = "Keine Ergebnisse zu deiner Suche gefunden";
+  } else uxRender = "Daten sind am Laden";
+
   return (
     <section className="SearchResults">
       {isDataLoaded
@@ -37,7 +43,7 @@ const RecipeCard = ({ data, isDataLoaded }) => {
               </div>
             );
           })
-        : "Daten sind am laden"}
+        : uxRender}
     </section>
   );
 };
