@@ -14,16 +14,18 @@ const MonthlyCard = () => {
           </div>
           <div className="monthly-body">
             <div className="left">
-              <h4>Nussmakronen</h4>
+              <h4>Coconut Peanut Macaroons</h4>
               <img src={Cookie} alt="bild von Keksen" />
             </div>
             <div className="right">
               <p>
                 Die Plätzchen-Back-Saison hat begonnen! Eines unserer
-                Lieblings-Plätzchen: Nussmakronen! Sie sind super einfach und
-                schnell gebacken.
+                Lieblings-Plätzchen: Coconut Peanut Macaroons! Sie sind super
+                einfach und schnell gebacken.
               </p>
-              <Link to={`/recipe/${`639798`}`}>Hier Klicken</Link>
+              <Link className="link" to={`/recipe/${`639798`}`}>
+                Hier Klicken
+              </Link>
             </div>
           </div>
         </div>

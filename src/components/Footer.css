@@ -46,22 +46,23 @@
   
   @media (max-width: 870px) {
     & .footer-container {
-      flex-direction: column; /* Änderung auf column für untereinander */
+      flex-direction: column; 
     }
     & .footer-box {
       margin-bottom: 1.5rem;
     }
     & .organick-box {
-      order: 1; /* Ändert die Reihenfolge auf 1 */
+     
+      order: 1; 
       text-align: center;
     }
 
     & .contact-box {
-      order: 2; /* Ändert die Reihenfolge auf 2 */
+      order: 2;
     }
 
     & .utility-box {
-      order: 3; /* Ändert die Reihenfolge auf 3 */
+      order: 3; 
     }
    
   }

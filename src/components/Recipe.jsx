@@ -6,16 +6,16 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState({});
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const { id } = useParams();
-  console.log("ID", id);
 
   useEffect(() => {
     const apiKeyO2 = "08177436caba4cdd8794441ed4da0ef1";
+    const apiKeyO3 = "29ea9b5a73e14144a1e7aefbcf924a94";
     const apiKeyM2 = "96a4012a907a426391db8efdb8849261";
 
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=${apiKeyM2}`
+          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKeyO3}`
         );
         const data = await response.json();
         // console.log(data);
