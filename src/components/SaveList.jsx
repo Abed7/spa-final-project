@@ -6,15 +6,12 @@ import "./SaveList.css";
 const SaveList = () => {
   const auth = useAuth();
   const navigate = useNavigate();
-  
-
 
 
   const handleLogout = () => {
     auth.logout();
     navigate("/");
   };
-
 
 
   return (

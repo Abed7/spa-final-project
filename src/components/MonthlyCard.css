@@ -49,7 +49,7 @@
     text-align: center;
   }
 
-  & .monthly-body div.right button{
+  & .monthly-body div.right .link{
     margin-top: 2rem ;
     background: linear-gradient(to bottom right, #7eb693,  rgba(0, 128, 172, 1));
     border: 0;
