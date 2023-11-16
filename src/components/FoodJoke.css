@@ -1,0 +1,163 @@
+/* Design-Vorlage: https://codepen.io/Kerrys7777/pen/eYNGxow */
+
+.FoodJoke {
+  height: 450px;
+ 
+
+  & .quote-wrapper {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 10vh auto 0;
+    text-align: center;
+  }
+  
+  & .text {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(126,182,147,1) 0%,
+      rgba(0, 128, 172, 1) 70%,
+      rgba(255, 255, 255, 0) 70.3%
+    );
+    position: relative;
+    margin: 0;
+    color: white;
+  }
+  
+  & .text p {
+    height: 100%;
+    line-height: 1.25;
+    padding: 0;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  & .text::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    float: left;
+    shape-outside: polygon(
+      0 0,
+      98% 0,
+      50% 6%,
+      23.4% 17.3%,
+      6% 32.6%,
+      0 50%,
+      6% 65.6%,
+      23.4% 82.7%,
+      50% 94%,
+      98% 100%,
+      0 100%
+    );
+    shape-margin: 7%;
+  }
+  
+  & .text p::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    float: right;
+    shape-outside: polygon(
+      2% 0%,
+      100% 0%,
+      100% 100%,
+      2% 100%,
+      50% 94%,
+      76.6% 82.7%,
+      94% 65.6%,
+      100% 50%,
+      94% 32.6%,
+      76.6% 17.3%,
+      50% 6%
+    );
+    shape-margin: 7%;
+  }
+  
+  & .quote-wrapper blockquote footer {
+    width: 100%;
+    position: absolute;
+    bottom: 25px;
+    font-size: 17px;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  & .quote-wrapper::before {
+    content: "\201C";
+    font-size: 270px;
+    height: 82px;
+    line-height: 0.78;
+    line-height: 1;
+    position: absolute;
+    top: -48px;
+    left: 0;
+    z-index: 1;
+    font-family: sans-serif, serif;
+    color: #ccc;
+    opacity: 0.9;
+  }
+
+  /* Button */
+  
+  & .quote-wrapper button{
+    margin-top: 1rem ;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to bottom right, #7eb693,  rgba(0, 128, 172, 1));
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+
+  & .quote-wrapper button:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #7eb693, .125rem .125rem 1rem #7eb69386;
+  }
+  
+  & .quote-wrapper button:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #7eb693, .125rem .125rem 1rem #7eb69386;;
+  }
+  
+  @media (min-width: 850px) {
+    & .quote-wrapper {
+      width: 370px;
+      height: 370px;
+    }
+  
+    & .quote-wrapper::before {
+      font-size: 300px;
+    }
+  
+    .text p {
+      font-size: 26px;
+    }
+  
+    & .quote-wrapper blockquote footer {
+      bottom: 32px;
+    }
+  }
+  & .quote-wrapper blockquote {
+    position: relative; 
+  }
+  
+
+}

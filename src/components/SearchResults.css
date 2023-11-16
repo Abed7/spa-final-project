@@ -1,0 +1,95 @@
+& .SearchResults {
+  display: grid;
+  padding: 2rem 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  color: black;
+  & a {
+    display: grid;
+    place-items: center;
+    color: black;
+  }
+
+  & .RecipeCard {
+    position: relative;
+    width: 400px;
+    margin-bottom: 3rem;
+
+    & .recipe-wrapper {
+      text-decoration: none;
+    }
+    & .img-wrapper {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+
+      & img {
+        width: 100%;
+        transition-duration: 0.5s;
+        display: block;
+        &:hover {
+          transform: scale(1.05);
+          transition-duration: 0.5s;
+        }
+      }
+      & .recipe-tags {
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        & .recipe-tag {
+          /* position: absolute; */
+          top: 20px;
+          left: 20px;
+          width: fit-content;
+          background-color: #21b584;
+          padding: 6px 12px;
+          border-radius: 8px;
+          color: white;
+          /* box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25); */
+          box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    & .img-overlay {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 70%;
+      bottom: -30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+      /* box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3); */
+      & .overlay-content {
+        height: 80px;
+        display: grid;
+        place-items: center;
+        & h3 {
+          font-size: 1rem;
+          padding: 1rem 0.5rem;
+        }
+      }
+    }
+    & .recipe-minutes {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      left: 1rem;
+      top: 1rem;
+      background-color: var(--highlight-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+      & span {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+  & .noresults {
+    display: grid;
+    place-items: center;
+  }
+}

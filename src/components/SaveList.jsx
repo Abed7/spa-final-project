@@ -9,6 +9,7 @@ const SaveList = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
+
   useEffect(() => {
     console.log("Watched items updated:", saveItems);
     // additional actions here, such as updating the UI
@@ -28,6 +29,7 @@ const SaveList = () => {
     setSeveItems(newSaveItems);
     localStorage.setItem("saveItems", JSON.stringify(newSaveItems));
   };
+
 
   useEffect(() => {
     const storedItem = JSON.parse(localStorage.getItem("saveItems"));

@@ -38,7 +38,15 @@ const router = createBrowserRouter([
       },
       {
         path: "savelist",
+
+        element: (
+          <RequireAuth>
+            <SaveList />
+          </RequireAuth>
+        ),
+
         element: (<RequireAuth><SaveList /></RequireAuth>),
+
       },
       {
         path: "Profile",

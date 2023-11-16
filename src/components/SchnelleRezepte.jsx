@@ -4,6 +4,7 @@ import SchnellRezeptPasta from "../assets//SchnellRezeptPasta.jpg";
 import clockIcon from "../assets/clock-icon.svg";
 
 import "./SchnelleRezepte.css";
+import { Link } from "react-router-dom";
 
 // Lokale Daten für die Cards -> beim klick drauf verlinkt API auf Rezept Card
 // Mehr anzeigen Zeigt Rezept Cards mit dauer unter 30min Zubereitungszeit
@@ -17,50 +18,56 @@ const SchnelleRezepte = () => {
 
         <div className="rezept-box">
           <div className="rezept-card">
-            <a href="#">
+
+            <Link to={`/recipe/${`661094`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptPasta} alt="Bild Pasta" />
               </div>
-            </a>
+            </Link>
             <div className="rezept-botom">
-              <h3>Spaghetti aglio e olio</h3>
+              <h3>Spicy Eggplant Spaghetti</h3>
 
               <p>Bild ist Link - könnte auf API rezept verweisen</p>
-              <p>
-                <img className="clock" src={clockIcon} alt="clock Icon" /> 25min
+              <p className="rezept-time">
+                <img className="clock" src={clockIcon} alt="clock Icon" /> 30min
               </p>
             </div>
           </div>
           <div className="rezept-card">
-            <a href="#">
+
+            <Link to={`/recipe/${`1674265`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptSuppe} alt="Bild Suppe" />
               </div>
-            </a>
+            </Link>
             <div className="rezept-botom">
               <h3>Tomatensuppe</h3>
               <p>Random Information aus Api</p>
-              <p>
+              <p className="rezept-time">
                 <img className="clock" src={clockIcon} alt="clock Icon" /> 20min
               </p>
             </div>
           </div>
           <div className="rezept-card">
-            <a href="#">
+
+            <Link to={`/recipe/${`660108`}`}>
+
               <div className="rezept-img">
                 <img src={SchnellRezeptSalat} alt="Bild Salat" />
               </div>
-            </a>
+            </Link>
             <div className="rezept-botom">
               <h3>Frischer Gartensalat</h3>
               <p>Random Information aus Api</p>
-              <p>
+              <p className="rezept-time">
                 <img className="clock" src={clockIcon} alt="clock Icon" /> 16min
               </p>
             </div>
           </div>
         </div>
-        <a href="#">Mehr Anzeigen</a>
+        <button className="button">Mehr Anzeigen</button>
       </div>
     </section>
   );
